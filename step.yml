@@ -1,0 +1,38 @@
+title: "Xcode config checker"
+summary: "Check Xcode build configuration"
+description: |-
+  This is a Step template.
+website: https://github.com/...
+source_code_url: https://github.com/...
+support_url: https://github.com/.../issues
+host_os_tags:
+  - osx-10.10
+project_type_tags:
+  - ios
+type_tags:
+  - script
+is_requires_admin_user: false
+is_always_run: false
+is_skippable: false
+dependencies:
+run_if: true
+inputs:
+  - check_workspace:
+    opts:
+      title: "Workspace file path"
+      is_required: true
+  - check_scheme:
+    opts:
+      title: "Scheme name"
+      is_required: true
+  - check_config:
+    opts:
+      title: "Build configuration name"
+      is_required: true
+  - check_rules_path:
+    opts:
+      title: "Rules file path"
+      is_required: true
+
+    
+    

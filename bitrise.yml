@@ -1,0 +1,14 @@
+format_version: 1.1.0
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+
+workflows:
+  test:
+    steps:
+    - path::./:
+        title: Xcode build configuration checker
+        description:
+        inputs:  
+        - check_workspace: PagesJaunes/PagesJaunes.xcworkspace
+        - check_scheme: PagesJaunes
+        - check_config: Debug
+        - check_rules_path: PagesJaunes/ConfigCheck/debug.rules
