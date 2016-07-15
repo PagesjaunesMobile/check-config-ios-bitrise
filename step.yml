@@ -17,7 +17,7 @@ is_skippable: false
 dependencies:
 run_if: true
 inputs:
-  - check_workspace:
+  - check_workspace_path:
     opts:
       title: "Workspace file path"
       is_required: true

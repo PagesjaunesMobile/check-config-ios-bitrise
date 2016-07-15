@@ -8,7 +8,7 @@ workflows:
         title: Xcode build configuration checker
         description:
         inputs:  
-        - check_workspace: PagesJaunes/PagesJaunes.xcworkspace
+        - check_workspace_path: PagesJaunes/PagesJaunes.xcworkspace
         - check_scheme: PagesJaunes
         - check_config: Debug
         - check_rules_path: PagesJaunes/ConfigCheck/debug.rules
