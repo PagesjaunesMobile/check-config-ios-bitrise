@@ -4,7 +4,7 @@ YELLOW='\033[00;33m'
 BLUE='\033[00;34m'
 GREEN='\033[00;32m'
 
-function msg_echo {
+function color_echo {
 	echo -e "$1$2${RESTORE}"
 }
 
