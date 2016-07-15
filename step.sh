@@ -3,8 +3,10 @@
 # fail if any commands fails
 set -e
 
-source "$PWD/libs/messages.sh"
-source "$PWD/libs/rules.sh"
+SCRIPT_DIR = "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+source "$SCRIPT_DIR/libs/messages.sh"
+source "$SCRIPT_DIR/libs/rules.sh"
 
 values=$(xcodebuild -workspace $check_workspace -scheme $check_scheme -configuration $check_config -showBuildSettings | tail -n +2 | sed 's/^ *//;s/ *$//')
 
