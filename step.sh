@@ -23,5 +23,5 @@ values=$(xcodebuild -workspace $check_workspace_path -scheme $check_scheme -conf
 msg_info "Reading settings from $check_workspace_path, scheme $check_scheme, configuration $check_config"
 
 echo
-
 source $check_rules_path
+echo

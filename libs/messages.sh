@@ -10,6 +10,7 @@ function color_echo {
 
 function msg_error {
 	echo "$(color_echo ${RED} [Error]) $1"
+  echo
 }
 
 function msg_warn {

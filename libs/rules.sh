@@ -4,7 +4,7 @@ function read_value {
   echo "$value"
 }
 
-function check_value_equals {
+function equal {
   value="$(read_value $1)"
   if [ $value == $2 ]; then
 	  msg_success "\"$1\" equals \"$2\""
@@ -15,9 +15,8 @@ function check_value_equals {
 	fi
 }
 
-function check_value_contains {
+function contain {
   value="$(read_value $1)"
-  echo "$1 = $value"
   if [[ $value =~ .*$2.* ]]; then
 		msg_success "\"$1\" contains \"$2\""
 		return 0
@@ -27,9 +26,8 @@ function check_value_contains {
 	fi
 }
 
-function check_value_not_contains {
+function not_contain {
   value="$(read_value $1)"
-  echo "$1 = $value"
   if [[ $value =~ .*$2.* ]]; then
 		msg_error "\"$1\" contains \"$2\""
 		return 1
