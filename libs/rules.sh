@@ -1,12 +1,12 @@
 function read_value {
-  value=$(echo "$values" | grep -e "^$1 = ")
+  value=$(echo "$values" | grep -e "^$1 = " | head -n 1)
   value=$(echo $value | awk -F" = " '{print $2}')
   echo "$value"
 }
 
 function equal {
   value="$(read_value $1)"
-  if [ $value == $2 ]; then
+  if [ "$value" == "$2" ]; then
 	  msg_success "\"$1\" equals \"$2\""
 		return 0
   else 
@@ -17,7 +17,7 @@ function equal {
 
 function contain {
   value="$(read_value $1)"
-  if [[ $value =~ .*$2.* ]]; then
+  if [[ "$value" =~ .*$2.* ]]; then
 		msg_success "\"$1\" contains \"$2\""
 		return 0
 	else
@@ -28,7 +28,7 @@ function contain {
 
 function not_contain {
   value="$(read_value $1)"
-  if [[ $value =~ .*$2.* ]]; then
+  if [[ "$value" =~ .*$2.* ]]; then
 		msg_error "\"$1\" contains \"$2\""
 		return 1
 	else

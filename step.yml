@@ -21,9 +21,9 @@ inputs:
     opts:
       title: "Workspace file path"
       is_required: true
-  - check_scheme:
+  - check_schemes:
     opts:
-      title: "Scheme name"
+      title: "Targets names"
       is_required: true
   - check_config:
     opts:

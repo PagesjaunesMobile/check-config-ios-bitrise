@@ -9,6 +9,6 @@ workflows:
         description:
         inputs:  
         - check_workspace_path: PagesJaunes/PagesJaunes.xcworkspace
-        - check_scheme: PagesJaunes
-        - check_config: Debug
-        - check_rules_path: PagesJaunes/ConfigCheck/debug.rules
+        - check_schemes: PagesJaunes WatchKit App
+        - check_config: InHouse
+        - check_rules_path: PagesJaunes/ConfigCheck.sh

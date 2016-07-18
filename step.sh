@@ -18,10 +18,17 @@ if [ ! -f "$check_rules_path" ]; then
 	exit 1
 fi
 
-values=$(xcodebuild -workspace $check_workspace_path -scheme $check_scheme -configuration $check_config -showBuildSettings | tail -n +2 | sed 's/^ *//;s/ *$//')
+CONFIG="$check_config"
 
-msg_info "Reading settings from $check_workspace_path, scheme $check_scheme, configuration $check_config"
-
-echo
-source $check_rules_path
-echo
+IFS='|' read -ra SCHEMES <<< "$check_schemes"
+echo $check_schemes
+for SCHEME in "${SCHEMES[@]}"; do
+  
+  msg_info "Reading settings from $check_workspace_path, scheme $SCHEME, configuration $check_config"
+  
+  values="$(xcodebuild -workspace "$check_workspace_path" -scheme "$SCHEME" -configuration "$check_config" -showBuildSettings | tail -n +2 | sed 's/^ *//;s/ *$//')"
+  echo
+  source $check_rules_path
+  echo
+    
+done
