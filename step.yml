@@ -25,7 +25,7 @@ inputs:
     opts:
       title: "Targets names"
       is_required: true
-  - check_config:
+  - check_configs:
     opts:
       title: "Build configuration name"
       is_required: true
