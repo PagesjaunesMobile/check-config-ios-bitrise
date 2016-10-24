@@ -25,7 +25,7 @@ for SCHEME in "${SCHEMES[@]}"; do
   for CONFIG in "${CONFIGS[@]}"; do
   
     msg_info "Reading settings from $check_workspace_path, scheme $SCHEME, configuration $CONFIG"  
-    values="$(xcodebuild clean -workspace "$check_workspace_path" -scheme "$SCHEME" -configuration "$CONFIG" -showBuildSettings | tail -n +2 | sed 's/^ *//;s/ *$//')"
+    values="$(xcodebuild clean -workspace "$check_workspace_path" -scheme "$SCHEME" -configuration "$CONFIG" -showBuildSettings | tail -n +2 | sed 's/^ *//;s/ *$//') | grep -v 'Error Domain'"
     echo
     source $check_rules_path
     echo
