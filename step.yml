@@ -17,9 +17,9 @@ is_skippable: false
 dependencies:
 run_if: true
 inputs:
-  - check_workspace_path:
+  - check_project_path:
     opts:
-      title: "Workspace file path"
+      title: "Project file path"
       is_required: true
   - check_schemes:
     opts:
@@ -33,6 +33,3 @@ inputs:
     opts:
       title: "Rules file path"
       is_required: true
-
-    
-    

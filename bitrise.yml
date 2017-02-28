@@ -7,8 +7,8 @@ workflows:
     - path::./:
         title: Xcode build configuration checker
         description:
-        inputs:  
-        - check_workspace_path: PagesJaunes/PagesJaunes.xcworkspace
-        - check_schemes: PagesJaunes|PagesJaunes-Dev|PagesJaunes WatchKit App|PagesJaunes WatchKit Extension|PagesJaunes Today
+        inputs:
+        - check_project_path: PagesJaunes/PagesJaunes.xcodeproj
+        - check_schemes: PagesJaunes|PagesJaunes WatchKit App|PagesJaunes WatchKit Extension|PagesJaunes Today
         - check_configs: Debug|InHouse|AdHoc|AppStore
         - check_rules_path: PagesJaunes/ConfigCheck.sh

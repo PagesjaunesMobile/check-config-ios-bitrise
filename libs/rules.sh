@@ -9,11 +9,22 @@ function equal {
   if [ "$value" == "$2" ]; then
 	  msg_success "\"$1\" equals \"$2\""
 		return 0
-  else 
+  else
 		msg_error "\"$1\" equals \"$value\", should be \"$2\""
 		return 1
 	fi
 }
+
+function configs {
+  if [ "$config_list" == "$1" ]; then
+	  msg_success "Config list equals \"$1\""
+		return 0
+  else
+		msg_error "Config list equals \"$config_list\", should be \"$1\""
+		return 1
+	fi
+}
+
 
 function contain {
   value="$(read_value $1)"
