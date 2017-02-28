@@ -20,7 +20,6 @@ fi
 
 config_list="$(xcodebuild -project "$check_project_path" -list | grep '        ' | sed 's/        //g' | tr '\n' '|')"
 
-echo plop
 echo $config_list
 
 IFS='|' read -ra SCHEMES <<< "$check_schemes"
