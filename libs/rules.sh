@@ -25,6 +25,15 @@ function configs {
 	fi
 }
 
+function xcode {
+  if [ "$xcode_version" == "$1" ]; then
+	  msg_success "Xcode version equals \"$1\""
+		return 0
+  else
+		msg_error "Xcode version equals \"$config_list\", should be \"$1\""
+		return 1
+	fi
+}
 
 function contain {
   value="$(read_value $1)"

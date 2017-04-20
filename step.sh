@@ -19,6 +19,7 @@ if [ ! -f "$check_rules_path" ]; then
 fi
 
 config_list="$(xcodebuild -project "$check_project_path" -list | grep '        ' | sed 's/        //g' | tr '\n' '|')"
+xcode_version="$(xcodebuild -version | head -1 | awk '{print $2}')"
 
 echo $config_list
 
