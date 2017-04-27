@@ -30,7 +30,7 @@ function xcode {
 	  msg_success "Xcode version equals \"$1\""
 		return 0
   else
-		msg_error "Xcode version equals \"$config_list\", should be \"$1\""
+		msg_error "Xcode version equals \"$xcode_version\", should be \"$1\""
 		return 1
 	fi
 }
