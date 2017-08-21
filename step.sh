@@ -22,6 +22,8 @@ config_list="$(xcodebuild -project "$check_project_path" -list | grep '        '
 
 xcode_version="$(xcodebuild -version | head -1 | awk '{print $2}')"
 
+cocoapods_version="$(cat "$BITRISE_SOURCE_DIR/PagesJaunes/Podfile.lock" | grep "COCOAPODS: " | awk -F" " '{print $2}')"
+
 IFS='|' read -ra SCHEMES <<< "$check_schemes"
 for SCHEME in "${SCHEMES[@]}"; do
 

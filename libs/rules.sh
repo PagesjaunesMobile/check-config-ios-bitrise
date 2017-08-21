@@ -35,6 +35,17 @@ function xcode {
 	fi
 }
 
+function pod {
+  if [ "$cocoapods_version" == "$1" ]; then
+	  msg_success "Cocoapods version equals \"$1\""
+		return 0
+  else
+		msg_error "Cocoapods version equals \"$cocoapods_version\", should be \"$1\""
+		return 1
+	fi
+}
+
+
 function contain {
   value="$(read_value $1)"
   if [[ "$value" =~ .*$2.* ]]; then
