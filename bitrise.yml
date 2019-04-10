@@ -9,6 +9,6 @@ workflows:
         description:
         inputs:
         - check_project_path: PagesJaunes/PagesJaunes.xcodeproj
-        - check_schemes: PagesJaunes|PagesJaunes WatchKit App|PagesJaunes WatchKit Extension
+        - check_schemes: PagesJaunes|PagesJaunesNotificationService|PagesJaunesiMessageExtension|PagesJaunesDirectory
         - check_configs: Debug|InHouse|AdHoc|AppStore
         - check_rules_path: PagesJaunes/ConfigCheck.sh
